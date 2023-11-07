@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/* Reset & Globals */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  padding-left: 200px;
+  font-family: "Roboto", sans-serif;
+  background-color: #ff4500;
+  color: #0e061a;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 190px;
+  margin-left: 30px auto;
+  padding: 10px;
+  color: #0e061a;
+  background: linear-gradient(135deg, #a02b00, #1e0d38);
+  border: 1px solid #0e061a;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(117, 88, 192, 0.287);
+}
+
+.nav_list {
+  margin: 2px;
+  padding: 4px;
+  color: #05f2db;
+  text-decoration: dotted;
+  background: rgba(14, 6, 26, 0.7);
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(14, 6, 26, 0.7);
+  display: inline-block;
+}
+
+nav ul li {
+  color: #05f2db;
+  text-decoration: dotted;
+  text-shadow: 0 0 5px #832300, 0 0 10px #ff00ff, 0 0 15px #9400d3,
+    0 0 20px #8a2be2;
+  animation: glowing 3s infinite alternate;
+}
+
+/* Main Content */
+div.main-content {
+  position: relative;
+  width: 100%;
+  color: #05f2db;
+  top: 0.2dvw;
+  background: linear-gradient(
+    101deg,
+    #1e0d38,
+    #1e0d38,
+    #1f0047,
+    #2c0083,
+    #1e0d38,
+    #1e0d38
+  );
+}
+
+.section-border {
+  margin: 10px 0;
+  padding: 20px;
+  border: 1px solid #05f2db;
+  border-radius: 1px;
+}
+
+div.main-content:after {
+  position: absolute;
+  top: 0.5vw;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.75);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #0e061a, #1e0d38);
+  background-size: 200% 200%;
+}
+
+.contact-panel {
+  max-width: fit-content;
+  background: rgba(14, 6, 26, 0.7);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px 0;
+  font-size: 90%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(14, 6, 26, 0.7);
+}
+
+/* Typography */
+h1,
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 20px;
+  color: #05f2db;
+  background: rgba(14, 6, 26, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(14, 6, 26, 0.7);
+  display: inline-block;
+  animation: glowing 3s infinite alternate;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+/* Circle Layout */
+.circle-layout {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.circle-layout li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background: rgba(14, 6, 26, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(14, 6, 26, 0.7);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  animation: glowing 3s infinite alternate;
+}
+
+.circle-layout span {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.circle-icon {
+  color: #05f2db;
+}
+
+.github-icon {
+  font-size: 2.1em;
+  margin: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon,
+.email-icon {
+  font-size: 2.1em;
+  margin: 15px 25px;
+}
+
+.cp {
+  margin: 40px;
+  font-weight: bold;
+}
+
+.gp {
+  text-align: center;
+  margin-left: 41px;
+  padding: 20px 0 0 0;
+}
+
+/* Interactions */
+.circle-layout li:hover {
+  transform: translateY(-10px) scale(1.12);
+  box-shadow: 0 0 20px rgba(14, 6, 26, 0.8);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .circle-layout li span {
+    display: none;
+  }
+
+  body {
+    padding-left: 0;
+  }
+
+  nav {
+    top: 40px;
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
+}
+
+.circle-layout a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.circle-layout a:hover .circle-icon {
+  color: #ff4500;
+}
+
+.circle-layout a:hover span {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500, 0 0 15px #8a2be2,
+      0 0 20px #9400d3;
+  }
+  50% {
+    text-shadow: 0 0 10px #8a2be2, 0 0 20px #9400d3, 0 0 30px #ff4500,
+      0 0 40px #ff4500;
+  }
+  100% {
+    text-shadow: 0 0 5px #9400d3, 0 0 10px #8a2be2, 0 0 15px #ff4500,
+      0 0 20px #ff4500;
+  }
+}
+
+#toTopButton,
+#toDownButton {
+  display: block;
+  font-size: 12px;
+  padding: 14px;
+  font-weight: bold;
+  margin: 3px 5px;
+  color: #05f2db;
+  background: rgba(14, 6, 26, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(14, 6, 26, 0.7);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px;
+}
+
+#toTopButton:hover,
+#toDownButton:hover {
+  background: #05f2db;
+  color: rgba(14, 6, 26, 0.7);
+}
+
+#toTopButton {
+  position: fixed;
+  bottom: 80px;
+  right: 15px;
+  z-index: 100;
+}
+
+#toDownButton {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  z-index: 100;
+}
